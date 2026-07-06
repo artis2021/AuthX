@@ -6,12 +6,13 @@ import java.time.LocalDateTime;
 
 @Getter
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class ApiResponse<T>{
+public class ErrorResponse {
+
     private boolean success;
+    private String errorCode;
     private String message;
-    private T data;
+    private int  status;
     @Builder.Default
     private LocalDateTime timestamp = LocalDateTime.now();
+    private String path;
 }
